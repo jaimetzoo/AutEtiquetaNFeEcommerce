@@ -1,0 +1,68 @@
+---
+config:
+  theme: base
+  layout: dagre
+---
+flowchart TD
+ subgraph s1["WOOCOMMERCE"]
+        Y["INÍCIO: Pedido WC REALIZADO"]
+  end
+ subgraph s2["APK SEPARAÇÃO"]
+        A["Pedido WC Separado no APK"]
+        B["Informar Qtd. Volumes"]
+        C@{ label: "IMPRESSO = 'N'" }
+  end
+ subgraph s3["INTEGRACAO"]
+        D["Integração:<br>Pedido Status 3-Conferência Concluída"]
+        E["Trigger SQL: Insere na Fila Automação"]
+  end
+ subgraph s4["MDLOG"]
+        F["Emissão NFe: Emite a NFe Automática com Nome Impressora"]
+        G["Internalização:<br>NFe Internalizada no MDLog"]
+  end
+ subgraph s5["OOBJ"]
+        H["Serviço Oobj:<br>Motor Faturador NFe Oobj XML"]
+        I{"SEFAZ:<br>NFe AUTORIZADA?"}
+        J["Serviço Oobj:<br> Motor de Impressão"]
+        K["Spool:<br>Danfe NFe Impressa Automática"]
+  end
+ subgraph s6["NOTA FISCAL"]
+        s3
+        s4
+        s5
+  end
+ subgraph s7["EPORTAL"]
+        L@{ label: "Serviço de Busca Cron 30s monitora IMPRESSO = 'N'" }
+        M{"NFe Status FATURADO?"}
+        N["Serviço de Busca: Gera Etiqueta 100x100mm"]
+  end
+ subgraph s8["IMPRESSORAS CUPS"]
+        O["Envio para Impressora CUPS printers/UNIDADE"]
+        P@{ label: "Atualiza IMPRESSO = 'S'" }
+        Q["FIM: Pedido Pronto p/ Expedição"]
+  end
+ subgraph s9["ETIQUETA VOLUME"]
+        s7
+        s8
+  end
+    Y --> A
+    A --> B
+    B --> C
+    C --> D
+    D --> E
+    E --> F
+    F --> H
+    H --> I
+    I -- NÃO --> H
+    I -- SIM --> J & G
+    J --> K
+    L --> C & M
+    G --> L
+    M -- NÃO --> L
+    M -- SIM --> N
+    N --> O
+    O --> P
+    P --> Q
+    C@{ shape: rect}
+    L@{ shape: rect}
+    P@{ shape: rect}
