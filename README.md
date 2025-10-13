@@ -249,3 +249,18 @@ flowchart TD
         L@{ shape: rect}
         P@{ shape: rect}
 ```
+
+## Unidades habilitadas no processo
+
+| Unidade               | Etiqueta Volume (Retira/Entrega)                                       | Nota Fiscal (Retira) |
+|-----------------------|------------------------------------------------------------------------|----------------------|
+| 1.  204 Forquilha   | X                                                                        | X                    |
+| 2.  202 Cohama      | X                                                                        | X                    |
+| 3.  209 Calhau      | X                                                                        | X                    |
+| 4.  207 Imperatriz  | Unidade não estar utilizando etiqueta de volume, e não possui impressora | X                    |
+| 5.  220 Castanheira | Unidade possui impressora de etiqueta de volume, mas não possui bobina   | X                    |
+| 6.  218 Araguaína   | Unidade não estar utilizando etiqueta de volume, e não possui impressora | Impressora é USB, incompatível com OOBJ. Unidade ficou de mudar a impressoa pra REDE |
+| 7.  216 Teresina    |                                                                          |                      |
+| 8.  222 Umarizal    |                                                                          |                      |
+| 9.  221 Marabá      |                                                                          |                      |
+| 10. 206 Rio Anil    |                                                                          |                      |
