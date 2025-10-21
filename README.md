@@ -250,17 +250,18 @@ flowchart TD
         P@{ shape: rect}
 ```
 
-## Unidades habilitadas no processo
+## Unidades habilitadas no processo Automatizado
 
-| Unidade               | Etiqueta Volume (Retira/Entrega)                                       | Nota Fiscal (Retira) |
-|-----------------------|------------------------------------------------------------------------|----------------------|
-| 1.  204 Forquilha   | X                                                                        | X                    |
-| 2.  202 Cohama      | X                                                                        | X                    |
-| 3.  209 Calhau      | X                                                                        | X                    |
-| 4.  207 Imperatriz  | Unidade não estar utilizando etiqueta de volume, e não possui impressora | X                    |
-| 5.  220 Castanheira | Unidade possui impressora de etiqueta de volume, mas não possui bobina   | X                    |
-| 6.  218 Araguaína   | Unidade não estar utilizando etiqueta de volume, e não possui impressora | Impressora é USB, incompatível com OOBJ. Unidade ficou de mudar a impressoa pra REDE |
-| 7.  216 Teresina    |                                                                          |                      |
-| 8.  222 Umarizal    |                                                                          |                      |
-| 9.  221 Marabá      |                                                                          |                      |
-| 10. 206 Rio Anil    |                                                                          |                      |
+| Unidade         | Versão(coletor) | Etiqueta Volume (Retira/Entrega) | Emissão/Impressão NFe(Retira) | Emissão/Impressão NFe(Entrega) | Emissão NFe(Entrega) |
+|-----------------|-----------------|----------------------------------|-------------------------------|--------------------------------|----------------------|
+| 204 Forquilha   | v2.7.2 | X | X |  | X |
+| 202 Cohama      | v2.7.2 | X | X |  | X |
+| 209 Calhau      | v2.7.2 | X | X |  | X |
+| 207 Imperatriz  | v2.7.2 | Unidade não utiliza etiqueta de volume, não possui impressora | X | X |  |
+| 220 Castanheira | v2.7.2 | Unidade possui impressora de etiqueta de volume, não possui bobina | X | X |  |
+| 218 Araguaína   | v2.7.2 | Unidade não utiliza etiqueta de volume, não possui impressora | X | X |  |
+| 216 Teresina    | v2.7.2 | Unidade não utiliza etiqueta de volume, não possui impressora | Impressora é USB, incompatível com OOBJ | Impressora é USB, incompatível com OOBJ | Impressora é USB, incompatível com OOBJ |
+| 222 Umarizal    | v2.7.2 | Unidade possui impressora de etiqueta de volume, não possui bobina | Impressora é USB, incompatível com OOBJ | Impressora é USB, incompatível com OOBJ | Impressora é USB, incompatível com OOBJ |
+| 221 Marabá      | v2.7.2 | Unidade não utiliza etiqueta de volume, não possui impressora | X | X |  |
+| 206 Rio Anil    | v2.7.2 | Unidade não utiliza etiqueta de volume, não possui impressora | X | X |  |
+| 213 Maiobão     | v2.7.2 | Unidade não utiliza etiqueta de volume, não possui impressora | X | X |  |
